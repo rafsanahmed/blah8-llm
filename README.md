@@ -1,4 +1,4 @@
-# BLAH8: Using LLMs to generate drug target associations
+# BLAH8: Using LLMs to generate and identify drug and druggable target associations
 
 ## Introduction
 Drug development is arguably one of the most critical challenges in medicine. There are several crucial steps that get us from idea to an usable drug. One of those steps are drug and druggable target identification. Many research approaches involve manually going through articles to find drug and druggable targets. Although painfully tedious, this approach brings results. However, this process can be exponentially fast-tracked with the help of Large Language Models (LLMs). 
@@ -8,7 +8,7 @@ There are many resources that contain manually annotated, drug and druggable tar
 This project for the BLAH8 hackathon is aimed as a pilot study to develop drug-target specific prompt-based corpora and locally fine-tune existing LLMs on such corpora to evaluate the capabilities for drug-target identification. 
 
 ## Proposal Summary
-In this BLAH8 hackathon, we aim for the following tasks:
+In this project for the BLAH8 hackathon, we aim for the following tasks:
 
 * Task 1: Develop prompt datasets from TTD resources to locally fine-tune LLMs.
 * Task 2: Fine-tune LLMs such as LLAMA on the prompts dataset.
