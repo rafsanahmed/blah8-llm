@@ -5,43 +5,46 @@ Drug development is arguably one of the most critical challenges in medicine. Th
 
 There are many resources that contain manually annotated, drug and druggable target information, such as [Therapeutic Target Database](https://db.idrblab.net/ttd/full-data-download) (TTD). These rich collection of annotated data can be used to fine-tune existing LLMs and explore possibilities for discovering novel drug-target associations.
 
-This project for the BLAH8 hackathon is aimed as a pilot study to develop drug-target specific prompt-based corpora and locally fine-tune existing LLMs on such corpora to evaluate the capabilities for drug-target identification. 
+This project for the BLAH8 hackathon is aimed as a pilot study to develop drug-target specific prompt-based corpora with fine-tuning LLMs in mind. Candidated can aim to develop question/answer, instruction or context-based corpora based on the given (TTD) or additional datasets. 
 
 ## Proposal Summary
 In this project for the BLAH8 hackathon, we aim for the following tasks:
 
-* Task 1: Develop prompt datasets from TTD resources to locally fine-tune LLMs.
-* Task 2: Fine-tune LLMs such as LLAMA on the prompts dataset.
-* Task 3: Evaluate the findings on different LLMs
-* Task 4 (if time permits): Create a prompt based chat interface for the best model 
+* Task 1: Design context and structure of prompts from TTD resources
+* Task 2: Build the prompts corpora based on the design decisions
+* Task 3: Run feasibility study with LLMs
+* Task 4 (if time permits): Fine-tune a LM with one corpus
 
 ## Breakdown of tasks
 
-### Task 1: Develop prompt datasets from TTD resources
-The TTD dataset not only contains drug and druggable targets information, but also contains a barrage of information such as Uniprot IDs, biomarkers, pathway information etc. They can be used to develop a variety of rich prompts that can be used to fine-tune the LLMs chosen by the user. The more diverse the datasets are, the better. The datasets will be split into train, dev, test splits for model training.
+### Task 1: Design context and structure of prompts from TTD resources
+The TTD dataset not only contains drug and druggable targets information, but also contains a barrage of information such as Uniprot IDs, biomarkers, disease, functionality, pathway information etc. They can be used to develop a variety of rich prompts that can be used to fine-tune LLMs. The more diverse the datasets are, the better. Not only that, additional datasets and annotations, such as KEGG, Uniprot etc can be used to incorporate contexual knowledge within these prompts. Several design decisions need to be made in order to develop a set of rich corpora for training LLMs. For example, the corpora can be in the form of question-answer, instruction-context based or other formats.
 
-### Task 2: Fine Tune LLMs
-The generated prompts datasets shall be used to fine tune locally tunable LLMs such as LLAMA and gptneo. Some models are fine tunable on local laptops but the other need the help of qlora. In this task, the participants explore options of fine tuning LLMs locally or using google colab.
+As a sample, a question answer corpus has been constructed from the target/drug information, available in the data folder. The corpus contains 44431 lines (38mb). 
 
-### Task 3: Evaluate findings
-The fine tuning of chosen LLMs will then be evaluated on test datasets and external datasets, such as Drugbank or a drug-target interaction network. Full text articles may also be provided to evaluate the inference on the text.
+### Task 2: Build the prompts corpora based on the design decisions
+Based on the design decisions, the corpora need to be build by the participants. Each member may explore different attributes of the dataset(s) and build their own prompt-based corpora. They can also vary based on the biological questions behind each individual drug/target. This task can be done on a local computer or in Google Colab.
 
-### Task 4: Chat interface
-Due to the generative nature of LLMs, a chat interface can be a user friendly approach for using the models, if time permits.
+
+### Task 3: Run feasibility check with LLMs
+Once the corpora are ready, a feasibility check should be run to observe if the prompt-based fine-tuning works for LLMs. While running and fine-tuning LLMs are computationally heavy and scheduling tasks on Google colab can be uncertain, the aim here is to try running the model(s) with a few epochs only. 
+
+### Task 4 (if time permits): Fine-tune a LM with one corpus
+If the corpora building and feasibily checks are successfull and performed within the timeframe, then the participants can aim to fully fine-tune an open source LLM. Theoritically, this should be doable with the help of approaches, such as qlora, within the timeframe.
 
 ## Proposed timeline
 
 ### Day 1 - 16th Jan
-#### dataset curation and prompt engineering 
-Most of the first day will be spent curating the prompt datasets and documenting the attributes of the datasets. Depending on participants and time, additional datasets, paths and prompts may be added to the collection. There should be aim to write documentation as a collective manuscript (eg. google doc)
+#### dataset exploration, understanding and prompt design
+Most of the first day shall be spent exploring the TTD and additional datasets and designing the prompts. Depending on participants and time, additional datasets, paths and prompts may be added to the collection. Agreements on participant roles/contribution, annotations and augmentation shall also be made. There shall be aim to write documentation as a collective manuscript (eg. google doc)
 
 ### Day 2 - 17th Jan
-#### testing viability of LLM models
-The second day will be spent on testing the fine-tunability of the datasets on a few LLMS. The primary target will be the LLAMA model, but additional LLMs can also be tested. By the end of the day, the expected outcome will be to successfully fine-tune at least one LLM on the dataset collection.
+#### Building the corpora
+Following the design decisions, the second day will be spent on building the prompt/instruction based corpora. If there is time remaining, the participants may start with a feasibility check with LLMs.
 
 ### Day 3 - 18th Jan
-#### Continuation of fine-tuning and evaluation
-The plan for the third day of the BLAH8 hackathon is to finish fine-tuning the models and run evaluations. There will be an option to develop a chat interface through huggingface spaces if time permits.
+#### Run feasibility check with LLMs
+The plan for the third day of the BLAH8 hackathon is to try fine-tuning an LLM for one/few epochs. The participants may try several LLMs such as LLaMA, Mistral_7b, GPT_neo etc. and find one that is least computationally demanding and most efficient. If time is remaining, then a step towards full fine-tuning of an LLM shall be taken. 
 
 ### Day 4 - 19th Jan
 #### Finalizing
@@ -58,6 +61,10 @@ Fine tuning LLAMA: https://www.leewayhertz.com/fine-tuning-llama2/
 
 Drugbank: https://go.drugbank.com/releases/latest
 
+
+# Corrections based on reviewer's comments
+
+Feasibility considerations: 
 
 
 ## References
