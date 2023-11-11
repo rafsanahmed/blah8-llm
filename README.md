@@ -5,19 +5,19 @@ Drug development is arguably one of the most critical challenges in medicine. Th
 
 There are many resources that contain manually annotated, drug and druggable target information, such as [Therapeutic Target Database](https://db.idrblab.net/ttd/full-data-download) (TTD). These rich collection of annotated data can be used to fine-tune existing LLMs and explore possibilities for discovering novel drug-target associations.
 
-This project for the BLAH8 hackathon is aimed as a pilot study to develop drug-target specific prompt-based corpora with fine-tuning LLMs in mind. Candidated can aim to develop question/answer, instruction or context-based corpora based on the given (TTD) or additional datasets. 
+This project for the BLAH8 hackathon is aimed as a pilot study to develop drug-target specific prompt-based corpora with fine-tuning LLMs in mind. Participants can aim to develop question/answer, instruction or context-based corpora based on the given (TTD) or additional datasets. 
 
 ## Proposal Summary
 In this project for the BLAH8 hackathon, we aim for the following tasks:
 
-* Task 1: Design context and structure of prompts from TTD resources
+* Task 1: Design context and structure of prompts based on TTD resources
 * Task 2: Build the prompts corpora based on the design decisions
-* Task 3: Run feasibility study with LLMs
+* Task 3: Run feasibility check with LLMs
 * Task 4 (if time permits): Fine-tune a LM with one corpus
 
 ## Breakdown of tasks
 
-### Task 1: Design context and structure of prompts from TTD resources
+### Task 1: Design context and structure of prompts based on TTD resources
 The TTD dataset not only contains drug and druggable targets information, but also contains a barrage of information such as Uniprot IDs, biomarkers, disease, functionality, pathway information etc. They can be used to develop a variety of rich prompts that can be used to fine-tune LLMs. The more diverse the datasets are, the better. Not only that, additional datasets and annotations, such as KEGG, Uniprot etc can be used to incorporate contexual knowledge within these prompts. Several design decisions need to be made in order to develop a set of rich corpora for training LLMs. For example, the corpora can be in the form of question-answer, instruction-context based or other formats.
 
 As a sample, a question answer corpus has been constructed from the target/drug information, available in the data folder. The corpus contains 44431 lines (38mb). 
@@ -61,10 +61,6 @@ Fine tuning LLAMA: https://www.leewayhertz.com/fine-tuning-llama2/
 
 Drugbank: https://go.drugbank.com/releases/latest
 
-
-# Corrections based on reviewer's comments
-
-Feasibility considerations: 
 
 
 ## References
